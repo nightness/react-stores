@@ -39,7 +39,7 @@ function App() {
     <>
       <h1>React Stores</h1>
       <div className="card">
-        <button onClick={() => setName("John Does")}>Name is {name}</button>
+        <button onClick={() => setName("John Doe")}>Name is {name}</button>
         <button onClick={() => setCountOne(countOne + 1)}>
           Count A (+1) is {countOne}
         </button>
