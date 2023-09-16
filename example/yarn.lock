@@ -374,10 +374,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@josh.guyette/react-stores@0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@josh.guyette/react-stores/-/react-stores-0.0.8.tgz#89c3370f41a2c464f8b100738c0e7968a0c1c295"
-  integrity sha512-Uzx7sLtXRMPyAfDoVMgd3154MQw6pB34+ltE3C7Xo0baaEh1RYNkX1zTWwk8KaagDntgzxyoJ4oapO9Nt6gmag==
+"@josh.guyette/react-stores@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@josh.guyette/react-stores/-/react-stores-0.2.0.tgz#f9051ccc14d4080462fc43af4e0809578ec2e9cf"
+  integrity sha512-j3wV6BM/9qfHaU3yBlHjgq4FA9ZkPd/qwuHjMZpzv4fFYgT/n43Ol8ce9OpulzvhNjwqLE00RmEcKM9i5UJY2A==
 
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"
