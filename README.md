@@ -1,15 +1,15 @@
-# Global Store for React
+# Global Store for React (@josh.guyette/react-stores)
 
 A simple and lightweight global state management solution for React and React Native applications, it replaces useState. Offering a way to create and manage local and global state in React applications.
 
 ## Installation
 
 ```bash
-npm install @nightness/react-stores
+npm install @josh.guyette/react-stores
 
 # or
 
-yarn add @nightness/react-stores
+yarn add @josh.guyette/react-stores
 ```
 
 ### API
