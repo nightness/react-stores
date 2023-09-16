@@ -1,6 +1,6 @@
-# Global Store for React (@josh.guyette/react-stores)
+# Stores for React (@josh.guyette/react-stores)
 
-A simple and lightweight global state management solution for React and React Native applications, it replaces useState. Offering a way to create and manage local and global state in React applications.
+A simple and lightweight global and local state management solution for React and React Native applications.
 
 ## Installation
 
