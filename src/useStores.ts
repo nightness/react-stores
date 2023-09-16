@@ -63,7 +63,7 @@ export function useCreateStore<T>(initialState: T): Store<T> {
 }
 
 // Use a local store in a component
-export function useStore<T, K extends keyof T>(store: Store<T>, key: K) {
+export function useStore<T, K extends keyof T>(store: Store<T>, key: K): readonly [T[K], (newValue: T[K]) => void] {
   const selector = useCallback((state: T) => state[key], [key]);
   const [localState, setLocalState] = useState<T[K]>(
     selector(store.getState())
@@ -85,43 +85,11 @@ export function useStore<T, K extends keyof T>(store: Store<T>, key: K) {
         [key]: newValue,
       });
     },
-  ] as const;
+  ] as const;  // This ensures the returned tuple is readonly.
 }
 
 // Use a store in a component
-export function useGlobalStore<T, K extends keyof T = keyof T>(
-  namespace: string,
-  key: K
-) {
+export function useGlobalStore<T, K extends keyof T>(namespace: string, key: K): readonly [T[K], (newValue: T[K]) => void] {
   const store: Store<T> = getGlobalStore<T>(namespace) as Store<T>;
   return useStore(store, key);
 }
-
-/**
-
-//
-// Example usage
-//
-
-interface PlaygroundStore {
-  name: string;
-  countOne: number;
-  countTwo: number;
-}
-
-function Playground({ children }: { children?: React.ReactNode }) {
-  const store = useCreateStore<PlaygroundStore>({
-    name: "Your Name",
-    countOne: 0,
-    countTwo: 0,
-  });
-  const [name, setName] = useStore(store, "name");
-  const [countOne, setCountOne] = useStore(store, "countOne");
-  const [countTwo, setCountTwo] = useStore(store, "countTwo");
-
-  return (
-    ...
-  );
-}
-
-*/

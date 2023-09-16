@@ -2,7 +2,7 @@ import {
   useCreateGlobalStore,
   useGlobalStore,
   useStore,
-} from "@josh.guyette/react-stores";
+} from "../../src/useStores";
 import "./App.css";
 
 interface AppStore {
@@ -12,9 +12,9 @@ interface AppStore {
 }
 
 function DataCard() {
-  const [name] = useGlobalStore<AppStore>("app", "name");
-  const [countOne] = useGlobalStore<AppStore>("app", "countOne");
-  const [countTwo] = useGlobalStore<AppStore>("app", "countTwo");
+  const [name] = useGlobalStore<AppStore, "name">("app", "name");
+  const [countOne] = useGlobalStore<AppStore, "countOne">("app", "countOne");
+  const [countTwo] = useGlobalStore<AppStore, "countTwo">("app", "countTwo");
 
   return (
     <div className="card">
