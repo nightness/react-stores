@@ -1,24 +1,28 @@
 # Global Store for React
 
-A simple and lightweight global state management solution for React applications.
+A simple and lightweight global state management solution for React and React Native applications, it replaces useState. Offering a way to create and manage local and global state in React applications.
 
 ## Installation
 
-This is a code snippet, so there's no installation required. Simply copy and paste the code into your project.
+```bash
+npm install @nightness/react-stores
 
-## Usage
+# or
 
-The provided code offers a way to create and manage global state in React applications. It provides both local and global store hooks.
+yarn add @nightness/react-stores
+```
 
 ### API
 
 - `useCreateGlobalStore(namespace: string, initialState: T)`: Creates a global store or retrieves an existing one based on the provided namespace.
-- `createStore(initialState: T)`: Creates a local store.
-- `useCreateStore(initialState: T)`: React hook to create a local store.
-- `useStore(store: Store<T>, key: K)`: React hook to use a local store in a component.
 - `useGlobalStore(namespace: string, key: K)`: React hook to use a global store in a component.
 
+- `useCreateStore(initialState: T)`: React hook to create a local store.
+- `useStore(store: Store<T>, key: K)`: React hook to use a local store in a component.
+
 ### Example
+
+There is an example project in the `example` folder. The following is a simple example of how to use the library.
 
 ```typescript
 interface PlaygroundStore {

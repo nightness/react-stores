@@ -17,5 +17,23 @@
     "jsx": "react-jsx"
   },
   "include": ["src"],
+  "exclude": [
+    "example",
+    "node_modules",
+    "dist",
+    "lib",
+    "esm",
+    "cjs",
+    "umd",
+    "es",
+    "types",
+    "coverage",
+    "test",
+    "tests",
+    "docs",
+    "website",
+    "scripts",
+    "flow-typed"
+  ],
   "projectRoot": "."
 }
