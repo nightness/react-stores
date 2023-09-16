@@ -2,7 +2,7 @@ import {
   useCreateGlobalStore,
   useGlobalStore,
   useStore,
-} from "../../src/useStores";
+} from "@josh.guyette/react-stores";
 import "./App.css";
 
 interface AppStore {

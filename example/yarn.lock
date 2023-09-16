@@ -374,6 +374,11 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@josh.guyette/react-stores@0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@josh.guyette/react-stores/-/react-stores-0.0.8.tgz#89c3370f41a2c464f8b100738c0e7968a0c1c295"
+  integrity sha512-Uzx7sLtXRMPyAfDoVMgd3154MQw6pB34+ltE3C7Xo0baaEh1RYNkX1zTWwk8KaagDntgzxyoJ4oapO9Nt6gmag==
+
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.3.3.tgz#7e02e6eb5df901aaedb08514203b096614024098"

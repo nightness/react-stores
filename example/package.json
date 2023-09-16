@@ -1,7 +1,7 @@
 {
   "name": "example",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@josh.guyette/react-stores": "0.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -24,5 +25,19 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
-  }
+  },
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./dist/*": "./dist/*",
+    "./example/*": "./example/*",
+    "./src/*": "./src/*",
+    "./node_modules/*": "./node_modules/*"
+  },
+  "import": [
+    "./dist/useStores.js"
+  ]
 }
