@@ -1,4 +1,4 @@
-import { useGlobalStore, useStore } from "../../src/stores";
+import { useGlobalStore, useStoreState } from "../../src/stores";
 import "./App.css";
 
 interface AppStore {
@@ -9,9 +9,9 @@ interface AppStore {
 
 function DataCard() {
   const store = useGlobalStore<AppStore>("app");
-  const [name] = useStore(store, "name");
-  const [countOne] = useStore(store, "countOne");
-  const [countTwo] = useStore(store, "countTwo");
+  const [name] = useStoreState(store, "name");
+  const [countOne] = useStoreState(store, "countOne");
+  const [countTwo] = useStoreState(store, "countTwo");
 
   return (
     <div className="card">
@@ -28,9 +28,9 @@ function App() {
     countOne: 0,
     countTwo: 0,
   });
-  const [name, setName] = useStore(store, "name");
-  const [countOne, setCountOne] = useStore(store, "countOne");
-  const [countTwo, setCountTwo] = useStore(store, "countTwo");
+  const [name, setName] = useStoreState(store, "name");
+  const [countOne, setCountOne] = useStoreState(store, "countOne");
+  const [countTwo, setCountTwo] = useStoreState(store, "countTwo");
 
   return (
     <>

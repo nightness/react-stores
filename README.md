@@ -14,10 +14,8 @@ yarn add @josh.guyette/react-stores
 
 ### API
 
-- `useCreateGlobalStore(namespace: string, initialState: T)`: Creates a global store or retrieves an existing one based on the provided namespace.
-- `useGlobalStore(namespace: string, key: K)`: React hook to use a global store in a component.
-
-- `useCreateStore(initialState: T)`: React hook to create a local store.
+- `useGlobalStore(namespace: string, initialState?: T)`: Retrieves an existing global store or creates a new one with the initialState; for the provided namespace.
+- `useLocalStore(initialState: T)`: React hook to create a local store.
 - `useStore(store: Store<T>, key: K)`: React hook to use a local store in a component.
 
 ### Example
@@ -37,9 +35,9 @@ function Playground({ children }: { children?: React.ReactNode }) {
     countOne: 0,
     countTwo: 0,
   });
-  const [name, setName] = useStore(store, "name");
-  const [countOne, setCountOne] = useStore(store, "countOne");
-  const [countTwo, setCountTwo] = useStore(store, "countTwo");
+  const [name, setName] = useStoreState(store, "name");
+  const [countOne, setCountOne] = useStoreState(store, "countOne");
+  const [countTwo, setCountTwo] = useStoreState(store, "countTwo");
 
   return (
     ...

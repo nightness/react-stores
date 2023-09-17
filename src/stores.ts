@@ -55,11 +55,11 @@ export function useGlobalStore<T>(namespace: string, initialState?: T): Store<T>
   return useRef(store).current;
 }
 
-export function useCreateStore<T>(initialState: T): Store<T> {
+export function useLocalStore<T>(initialState: T): Store<T> {
   return useRef(new Store(initialState)).current;
 }
 
-export function useStore<T, K extends keyof T>(store: Store<T>, key: K): readonly [T[K], (newValue: T[K]) => void] {
+export function useStoreState<T, K extends keyof T>(store: Store<T>, key: K): readonly [T[K], (newValue: T[K]) => void] {
   const selector = useCallback((state: T) => state[key], [key]);
   const [localState, setLocalState] = useState<T[K]>(selector(store.getState()));
 

@@ -1,6 +1,6 @@
 {
   "name": "@josh.guyette/react-stores",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "description": "A simple state management library for React",
   "keywords": [
     "react",
@@ -25,7 +25,7 @@
     "url": "https://github.com/nightness"
   },
   "type": "module",
-  "main": "src/useStores.ts",
+  "main": "src/stores.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest",
