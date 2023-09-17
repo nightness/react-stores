@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react-hooks/dom';
-import { useCreateStore, useStore, useCreateGlobalStore, useGlobalStore } from './useStores'; // Adjust the import path
+import { useCreateStore, useStore, useGlobalStore } from './stores'; // Adjust the import path
 
 interface TestState {
     count: number;
@@ -23,9 +23,9 @@ describe('useStore', () => {
     });
 });
 
-describe('Global Store', () => {
+describe('useGlobalStore', () => {
     it('should create and retrieve a global store', () => {
-        const { result } = renderHook(() => useCreateGlobalStore<TestState>('testNamespace', { count: 0 }));
+        const { result } = renderHook(() => useGlobalStore<TestState>('testNamespace', { count: 0 }));
         expect(result.current.getState()).toEqual({ count: 0 });
 
         const store = useGlobalStore<TestState>('testNamespace');

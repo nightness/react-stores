@@ -1,8 +1,4 @@
-import {
-  useCreateGlobalStore,
-  useGlobalStore,
-  useStore,
-} from "../../src/useStores";
+import { useGlobalStore, useStore } from "../../src/stores";
 import "./App.css";
 
 interface AppStore {
@@ -27,7 +23,7 @@ function DataCard() {
 }
 
 function App() {
-  const store = useCreateGlobalStore<AppStore>("app", {
+  const store = useGlobalStore<AppStore>("app", {
     name: "John Doe",
     countOne: 0,
     countTwo: 0,
