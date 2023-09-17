@@ -12,9 +12,10 @@ interface AppStore {
 }
 
 function DataCard() {
-  const [name] = useGlobalStore<AppStore, "name">("app", "name");
-  const [countOne] = useGlobalStore<AppStore, "countOne">("app", "countOne");
-  const [countTwo] = useGlobalStore<AppStore, "countTwo">("app", "countTwo");
+  const store = useGlobalStore<AppStore>("app");
+  const [name] = useStore(store, "name");
+  const [countOne] = useStore(store, "countOne");
+  const [countTwo] = useStore(store, "countTwo");
 
   return (
     <div className="card">

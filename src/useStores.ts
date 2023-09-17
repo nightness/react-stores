@@ -10,7 +10,7 @@ type StoreMap = Map<string, Store<any>>;
 
 const globalStores: StoreMap = new Map([]);
 
-export function createStore<T>(initialState: T): Store<T> {
+function createStore<T>(initialState: T): Store<T> {
   let state = initialState;
   const listeners = new Set<Listener<T>>([]);
 
@@ -62,7 +62,7 @@ export function useCreateStore<T>(initialState: T): Store<T> {
   return useRef(createStore(initialState)).current;
 }
 
-// Use a local store in a component
+// useState for the store
 export function useStore<T, K extends keyof T>(store: Store<T>, key: K): readonly [T[K], (newValue: T[K]) => void] {
   const selector = useCallback((state: T) => state[key], [key]);
   const [localState, setLocalState] = useState<T[K]>(
@@ -85,11 +85,12 @@ export function useStore<T, K extends keyof T>(store: Store<T>, key: K): readonl
         [key]: newValue,
       });
     },
-  ] as const;  // This ensures the returned tuple is readonly.
+  ] as const;
 }
 
-// Use a store in a component
-export function useGlobalStore<T, K extends keyof T>(namespace: string, key: K): readonly [T[K], (newValue: T[K]) => void] {
-  const store: Store<T> = getGlobalStore<T>(namespace) as Store<T>;
-  return useStore(store, key);
+// Use an existing (parents) global store
+export function useGlobalStore<T>(
+  namespace: string
+): Store<T> {
+  return getGlobalStore<T>(namespace) as Store<T>;
 }
