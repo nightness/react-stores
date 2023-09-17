@@ -28,7 +28,7 @@ function DataCard() {
 
 function App() {
   const store = useCreateGlobalStore<AppStore>("app", {
-    name: "Your Name",
+    name: "John Doe",
     countOne: 0,
     countTwo: 0,
   });
