@@ -50,8 +50,8 @@ export function useGlobalStore<T>(namespace: string, initialState?: T): Store<T>
       throw new Error('initialState is required when creating a new store');
     }
     store = new Store<T>(initialState);
+    GlobalStoreManager.setStore<T>(namespace, store);
   }
-  GlobalStoreManager.setStore<T>(namespace, store);
   return useRef(store).current;
 }
 
