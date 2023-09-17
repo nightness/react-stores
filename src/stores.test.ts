@@ -14,12 +14,12 @@ describe('useCreateStore', () => {
 
 describe('useStore', () => {
     it('should return current state and a setter function', () => {
-        const store = useCreateStore({ count: 0 });
-        const { result } = renderHook(() => useStore(store, 'count'));
+        const { result: store } = renderHook(() => useCreateStore({ count: 0 }));
+        const { result } = renderHook(() => useStore(store.current, 'count'));
         const [state, setState] = result.current;
         expect(state).toBe(0);
         act(() => setState(1));
-        expect(store.getState().count).toBe(1);
+        expect(store.current.getState().count).toBe(1);
     });
 });
 
@@ -28,8 +28,8 @@ describe('useGlobalStore', () => {
         const { result } = renderHook(() => useGlobalStore<TestState>('testNamespace', { count: 0 }));
         expect(result.current.getState()).toEqual({ count: 0 });
 
-        const store = useGlobalStore<TestState>('testNamespace');
-        const { result: globalStoreResult } = renderHook(() => useStore(store, 'count'));
+        const { result: store } = renderHook(() => useGlobalStore<TestState>('testNamespace'));
+        const { result: globalStoreResult } = renderHook(() => useStore(store.current, 'count'));
         const [globalState, setGlobalState] = globalStoreResult.current;
         expect(globalState).toBe(0);
         act(() => setGlobalState(2));
