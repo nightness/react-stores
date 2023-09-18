@@ -1,6 +1,6 @@
 {
   "name": "@josh.guyette/react-stores",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A simple state management library for React",
   "keywords": [
     "react",

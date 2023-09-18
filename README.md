@@ -30,7 +30,7 @@ interface PlaygroundStore {
 }
 
 function Playground({ children }: { children?: React.ReactNode }) {
-  const store = useCreateStore<PlaygroundStore>({
+  const store = useLocalStore<PlaygroundStore>({
     name: "Your Name",
     countOne: 0,
     countTwo: 0,

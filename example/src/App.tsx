@@ -1,21 +1,24 @@
-import { useGlobalStore, useStoreState } from "../../src/stores";
+import { useGlobalStore, useLocalStore, useStoreState } from "../../src/stores";
 import "./App.css";
 
-interface AppStore {
-  name: string;
+export interface AppStore {
   countOne: number;
   countTwo: number;
 }
 
+interface LocalStore {
+  data: {
+    name: string;
+  };
+}
+
 function DataCard() {
   const store = useGlobalStore<AppStore>("app");
-  const [name] = useStoreState(store, "name");
   const [countOne] = useStoreState(store, "countOne");
   const [countTwo] = useStoreState(store, "countTwo");
 
   return (
     <div className="card">
-      <h2>{name}</h2>
       <p>Count A: {countOne}</p>
       <p>Count B: {countTwo}</p>
     </div>
@@ -24,22 +27,31 @@ function DataCard() {
 
 function App() {
   const store = useGlobalStore<AppStore>("app", {
-    name: "John Doe",
     countOne: 0,
     countTwo: 0,
   });
-  const [name, setName] = useStoreState(store, "name");
+  const localStore = useLocalStore<LocalStore>({
+    data: {
+      name: "John Doe",
+    },
+  });
   const [countOne, setCountOne] = useStoreState(store, "countOne");
   const [countTwo, setCountTwo] = useStoreState(store, "countTwo");
+  const [data, setData] = useStoreState(localStore, "data");
 
   return (
     <>
       <h1>React Stores</h1>
       <div className="card">
         <button
-          onClick={() => setName(name === "John Doe" ? "Jane Doe" : "John Doe")}
+          onClick={() =>
+            setData({
+              ...data,
+              name: data.name === "John Doe" ? "Jane Doe" : "John Doe",
+            })
+          }
         >
-          Name is {name}
+          Name is {data.name}
         </button>
         <button onClick={() => setCountOne(countOne + 1)}>
           Count A (+1) is {countOne}
