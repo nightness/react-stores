@@ -16,7 +16,7 @@ yarn add @josh.guyette/react-stores
 
 - `useGlobalStore(namespace: string, initialState?: T)`: Retrieves an existing global store or creates a new one with the initialState; for the provided namespace.
 - `useLocalStore(initialState: T)`: React hook to create a local store.
-- `useStore(store: Store<T>, key: K)`: React hook to use a local store in a component.
+- `useStoreState(store: Store<T>, key: K)`: React hook to use a local store in a component.
 
 ### Example
 
